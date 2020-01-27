@@ -4,22 +4,24 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="book-icon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Bilbo&display=swap" rel="stylesheet">
     <title>ONLINE BOOK LIBRARY</title>
 
   </head>
   <body>
-    <h1>ONLINE BOOK LIBRARY</h1>
-    <button type="button" id="new-book">ADD NEW BOOK</button>
-    <div id="library-container">
-
+    <h1>ONLINE LIBRARY</h1>
+    <div class="button-wrapper">
+      <button type="button" id="new-book">ADD NEW BOOK</button>
     </div>
+
+    <div id="library-container"></div>
 
     <div class="form" id="form">
       <form action="#" class="form-container">
-        <h2 id="form-opener">Add your book</h2>
+        <h2 id="form-opener">ADD YOUR BOOK</h2>
 
         <label for="book">Book Title</label>
-        <input type="text" name="book" value="" id="book-title">
+        <input type="text" name="book" value="" id="book-title" autofocus>
         <br>
         <label for="author">Author</label>
         <input type="text" name="author" value="" id="book-author">
@@ -36,7 +38,6 @@
       </form>
     </div>
 
-    <p id="demo"></p>
   </body>
   <script type="text/javascript" src="script.js"></script>
 </html>

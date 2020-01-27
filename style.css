@@ -1,33 +1,117 @@
 body {
   box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body::after {
+  content: "";
+  background: url("library.jpeg");
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Bilbo', cursive;
+  font-weight: bold;
+  font-size: 50px;
 }
 
 h2 {
   text-align: center;
 }
 
+.button-wrapper {
+  margin: 0 auto;
+  position: relative;
+  width: 180px;
+}
+
+#new-book {
+  height: 50px;
+  background-color: #89d8d3;
+  background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  width: 180px;
+}
+
+#new-book:focus,
+input:focus {
+  outline: none;
+}
+
 .form {
+  background-color: #f1dfd1;
+  background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
   display: none;
   position: fixed;
   top: 30%;
   left: 30%;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 3px solid #681d08;
   width: 400px;
   padding: 20px;
 }
 
 #library-container {
   width: 90%;
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
   position: relative;
-  border: 1px solid red;
-  display: flex;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-auto-rows: 170px;
+}
+
+#form-opener {
+  font-family: 'Bilbo', cursive;
+}
+
+label,
+input {
+  margin-bottom: 5px;
+}
+
+input {
+  border-radius: 5px;
+  height: 18px;
+  padding-left: 5px;
+}
+
+#submit {
+  margin-top: 20px;
+  background-color: #89d8d3;
+  background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+  border-radius: 5px;
+  height: 40px;
+}
+
+#cancel {
+  height: 40px;
+  border-radius: 5px;
+  float: right;
+  position: relative;
+  top: 21px;
 }
 
 .book-item {
-  height: 200px;
-  width: 300px;
-  border: 1px solid green;
   border-radius: 5px;
+  background-image: url("http://clipartmag.com/images/open-book-template-28.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.book-item p {
+  font-family: Arial, sans-serif;
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: 14px;
 }

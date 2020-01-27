@@ -9,9 +9,6 @@ let submit = document.getElementById('submit');
 let ifRead = document.getElementsByName('readStatus');
 let library = document.getElementById('library-container');
 
-let bookshelf = document.createElement('div');
-let description = document.createElement('p');
-
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -19,13 +16,16 @@ function Book(title, author, pages, read) {
   this.readOrNot = read;
 }
 
-let hobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 310, true);
-let haus = new Book('Haus der Geister', 'John Boyne', 333, true);
+let hobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 310, 'already read');
+let haus = new Book('This House is Haunted', 'John Boyne', 333, 'already read');
 
 let myLibrary = [hobbit, haus];
 
+myrender();
+
 function addBookToLibrary() {
   submit.addEventListener('click', () => {
+    form.style.display = 'none';
     if (ifRead[0].checked) {
       ifRead = read.value;
     } else if (ifRead[1].checked) {
@@ -34,21 +34,38 @@ function addBookToLibrary() {
 
     book = new Book(bookTitle.value, bookAuthor.value, pagesNumber.value, ifRead);
     myLibrary.push(book);
-
-    render();
+    library.innerHTML = '';
+    myrender();
   });
 }
 
-function render() {
+function myrender() {
   let librLength = myLibrary.length;
 
   for (let i = 0; i < librLength; i++) {
-    let valueArray = Object.values(myLibrary[i]);
+    let bookshelf = document.createElement('div');
+    let currentBook = myLibrary[i];
+    [
+      { 'Book Title: ': currentBook.title },
+      { 'Book Author: ': currentBook.author },
+      { 'Number of Pages: ': currentBook.noOfPages },
+      { 'Read Status: ': currentBook.readOrNot },
+    ].forEach((trait) => {
+      let p = document.createElement('p');
+
+      let prefix = Object.keys(trait)[0];
+      let suffix = Object.values(trait)[0];
+      p.textContent = prefix + suffix;
+      bookshelf.appendChild(p);
+    });
+
+    // let valueArray = Object.values(myLibrary[i]);
     bookshelf.setAttribute('class', 'book-item');
     library.appendChild(bookshelf);
-    bookshelf.appendChild(description);
-    description.textContent = 'Book Title: ' + valueArray[0];
-    description.setAttribute('class', 'book-info');
+
+    // bookshelf.appendChild(description);
+    // description.textContent = 'Book Title: ' + myLibrary[i].title;
+    // description.setAttribute('class', 'book-info');
   }
 }
 
