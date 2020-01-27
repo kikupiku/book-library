@@ -16,3 +16,18 @@ h2 {
   width: 400px;
   padding: 20px;
 }
+
+#library-container {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid red;
+  display: flex;
+}
+
+.book-item {
+  height: 200px;
+  width: 300px;
+  border: 1px solid green;
+  border-radius: 5px;
+}
