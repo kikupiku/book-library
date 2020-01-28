@@ -36,6 +36,7 @@ let myLibrary = [hobbit, house, hard];
 
 render();
 addBookToLibrary();
+removeBook();
 
 function render() {
   let librLength = myLibrary.length;
@@ -69,13 +70,6 @@ function render() {
     removeOption.className += `delete-button${i + 1}`;
 
     bookshelf.appendChild(removeOption);
-
-    let deleteCandidate = document.querySelector(`div[class="book-item${i + 1}"]`);
-    let buttonOfDeleteCandidate = document.querySelector(`button[class="delete-button${i + 1}"]`);
-
-    // buttonOfDeleteCandidate.addEventListener('click', () => {
-    //   library.removeChild(deleteCandidate);
-    // });
   }
 }
 
@@ -93,10 +87,25 @@ function addBookToLibrary() {
       book.readOrNot = 'not determined';
     }
 
-    myLibrary.push(book);
+    if (bookAuthor.value === '') {
+      book.author = 'Anonymous, I guess';
+    }
+
+    if (pagesNumber.value === '') {
+      book.noOfPages = 'didn\'t check';
+    }
+
+    if (bookTitle.value === '') {
+      alert('Try again but this timme put the title in.');
+      form.style.display = 'block';
+    } else {
+      myLibrary.push(book);
+    }
+
     library.innerHTML = '';
     render();
     clearForm();
+    removeBook();
   });
 }
 
@@ -117,4 +126,16 @@ function clearForm() {
   textareaPages.value = '';
   read.checked = false;
   notRead.checked = false;
+}
+
+function removeBook() {
+  for (let i = 0; i < myLibrary.length; i++) {
+    let deleteCandidateBtn = document.getElementsByClassName(`delete-button${i + 1}`);
+    let bookToBeRemoved = document.getElementsByClassName(`book-item${i + 1}`);
+
+    deleteCandidateBtn[0].addEventListener('click', () => {
+      library.removeChild(bookToBeRemoved[0]);
+      myLibrary.splice(i, 1);
+    });
+  }
 }

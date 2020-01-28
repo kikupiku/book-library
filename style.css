@@ -4,7 +4,8 @@ body {
 }
 
 body::after {
-  background: url("library.jpeg");
+  background-image: url("library.jpeg");
+  background-repeat: repeat;
   bottom: 0;
   content: "";
   left: 0;
@@ -138,8 +139,3 @@ input {
   height: 25px;
   margin-left: 15px;
 }
-
-
-/* TODO:
-remove book option
-not allowing to put in empty books */
