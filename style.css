@@ -4,22 +4,22 @@ body {
 }
 
 body::after {
-  content: "";
   background: url("library.jpeg");
-  opacity: 0.3;
-  top: 0;
-  left: 0;
   bottom: 0;
-  right: 0;
+  content: "";
+  left: 0;
+  opacity: 0.3;
   position: absolute;
+  right: 0;
+  top: 0;
   z-index: -1;
 }
 
 h1 {
-  text-align: center;
   font-family: 'Bilbo', cursive;
-  font-weight: bold;
   font-size: 50px;
+  font-weight: bold;
+  text-align: center;
 }
 
 h2 {
@@ -33,42 +33,46 @@ h2 {
 }
 
 #new-book {
-  height: 50px;
-  background-color: #89d8d3;
-  background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+  background-color: #7fcec5;
+  background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   border-radius: 8px;
-  color: white;
-  font-weight: bold;
   font-size: 18px;
+  font-weight: bold;
+  height: 50px;
   width: 180px;
 }
 
-#new-book:focus,
+button:focus,
 input:focus {
   outline: none;
+}
+
+button {
+  color: white;
+  font-weight: bold;
 }
 
 .form {
   background-color: #f1dfd1;
   background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
+  border: 3px solid #681d08;
+  border-radius: 5px;
   display: none;
+  left: 30%;
+  padding: 20px;
   position: fixed;
   top: 30%;
-  left: 30%;
-  border-radius: 5px;
-  border: 3px solid #681d08;
   width: 400px;
-  padding: 20px;
 }
 
 #library-container {
-  width: 90%;
-  margin: 30px auto 0 auto;
-  position: relative;
   display: grid;
+  grid-auto-rows: 170px;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  grid-auto-rows: 170px;
+  margin: 30px auto 0 auto;
+  position: relative;
+  width: 90%;
 }
 
 #form-opener {
@@ -80,6 +84,14 @@ input {
   margin-bottom: 5px;
 }
 
+label[for="book"] {
+  margin-right: 55px;
+}
+
+label[for="author"] {
+  margin-right: 78px;
+}
+
 input {
   border-radius: 5px;
   height: 18px;
@@ -87,31 +99,47 @@ input {
 }
 
 #submit {
-  margin-top: 20px;
   background-color: #89d8d3;
   background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
   border-radius: 5px;
   height: 40px;
+  margin-top: 20px;
 }
 
 #cancel {
-  height: 40px;
+  background-color: #b3cdd1;
+  background-image: linear-gradient(315deg, #b3cdd1 0%, #9fa4c4 74%);
   border-radius: 5px;
   float: right;
+  height: 40px;
   position: relative;
   top: 21px;
 }
 
 .book-item {
-  border-radius: 5px;
   background-image: url("http://clipartmag.com/images/open-book-template-28.jpg");
   background-repeat: no-repeat;
   background-size: contain;
+  border-radius: 5px;
 }
 
 .book-item p {
   font-family: Arial, sans-serif;
-  padding-left: 15px;
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
+  padding-left: 15px;
 }
+
+.delete-button {
+  background-color: #db7f8e;
+  background-image: linear-gradient(315deg, #db7f8e 0%, #7b0d1e 74%);
+  border-radius: 5px;
+  font-weight: bold;
+  height: 25px;
+  margin-left: 15px;
+}
+
+
+/* TODO:
+remove book option
+not allowing to put in empty books */
