@@ -15,16 +15,20 @@ let textareaPages = document.getElementById('no-of-pages');
 let ifRead = document.getElementsByName('readStatus');
 let library = document.getElementById('library-container');
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.noOfPages = pages;
-  this.readOrNot = read;
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.noOfPages = pages;
+    this.checkIfRead(read);
+  }
 
-  if (read === true) {
-    this.readOrNot = 'already read';
-  } else {
-    this.readOrNot = 'not read yet';
+  checkIfRead(read) {
+    if (read === true) {
+      this.readOrNot = 'already read';
+    } else {
+      this.readOrNot = 'not read yet';
+    }
   }
 }
 
