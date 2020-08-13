@@ -16,27 +16,27 @@
 
     <div id="library-container"></div>
 
-    <div class="form" id="form">
+    <form class="form" id="form">
       <div  class="form-container">
         <h2 id="form-opener">ADD YOUR BOOK</h2>
 
         <label for="book">Book Title</label>
-        <input type="text" name="book" value="" id="book-title" autofocus>
+        <input type="text" name="book" value="" id="book-title" autofocus required>
         <br>
         <label for="author">Author</label>
-        <input type="text" name="author" value="" id="book-author">
+        <input type="text" name="author" value="" id="book-author" required>
         <br>
         <label for="pages">Number of Pages</label>
-        <input type="text" name="pages" value="" id="no-of-pages">
+        <input type="text" name="pages" value="" id="no-of-pages" required>
         <br>
         <label for="readStatus">Have you read it?</label>
         <input type="radio" name="readStatus" value="already read" id="read">Already read!
         <input type="radio" name="readStatus" value="not read yet" id="not-read">Not yet!
         <br>
-        <button id="submit" type="submit" name="" value="Add Book">ADD BOOK</button>
+        <input id="submit" type="submit" name="" value="ADD BOOK">
         <button id="cancel" type="reset" name="button">CANCEL</button>
       </div>
-    </div>
+    </form>
 
   </body>
   <script type="text/javascript" src="script.js"></script>
