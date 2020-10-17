@@ -9,4 +9,4 @@ The project has no back-end so the library will reset after refreshing the page.
 
 Live version available [HERE](https://kikupiku.github.io/book-library/)
 
-![gif of the project in action](https://res.cloudinary.com/kikupiku/image/upload/v1597355809/project-gifs/online-library_hjopso.gif)
+![gif of the project in action](https://res.cloudinary.com/kikupiku/image/upload/v1602937754/project-gifs/online-library_gyxo03.gif)
